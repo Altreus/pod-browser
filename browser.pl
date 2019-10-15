@@ -35,6 +35,8 @@ get '/:module' => sub ($c) {
 
 #    return $c->res->code(301) && $c->redirect_to("https://metacpan.org/pod/$module") unless $path && -r $path;
     my $parser = MetaCPAN::Pod::XHTML->new;
+    $parser->$_('') for qw(html_header html_footer);
+    $parser->anchor_items(1); # adds <a> to =items
     $parser->perldoc_url_prefix('/');
     $parser->output_string(\my $output);
     $parser->parse_file($path);
