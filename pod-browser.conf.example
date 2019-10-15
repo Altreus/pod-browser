@@ -1,6 +1,6 @@
 {
     search_dirs => [
-        '/path/to/my/libs'
+        @INC
     ],
     libs_dirs => [
         '/opt/libs'
