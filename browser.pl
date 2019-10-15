@@ -1,15 +1,15 @@
 #!/usr/bin/env perl
 
-use v5.24;
+use v5.14;
 use Mojolicious::Lite;
 use Config;
-use experimental 'signatures';
 use Pod::Simple::Search;
 use MetaCPAN::Pod::XHTML;
 
 plugin Config => {file => 'pod-browser.conf', default => {}};
 
-helper lib_dirs => sub ($c) {
+helper lib_dirs => sub {
+    my $c = shift;
     my @dirs;
 
     if (my $dirs = $c->config->{search_dirs}) {
@@ -25,11 +25,14 @@ helper lib_dirs => sub ($c) {
     return @dirs;
 };
 
-helper find_module => sub ($c, $module) {
+helper find_module => sub {
+    my $c = shift;
+    my $module = shift;
     Pod::Simple::Search->new->inc(0)->find($module, $c->lib_dirs);
 };
 
-get '/:module' => sub ($c) {
+get '/:module' => sub {
+    my $c = shift;
     my $module = $c->stash('module');
     my ($path) = $c->find_module($module);
 
