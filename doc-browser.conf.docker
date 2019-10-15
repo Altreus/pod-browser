@@ -1,0 +1,6 @@
+{
+    search_dirs => \@INC,
+    libs_dirs => [
+        '/opt/libs'
+    ]
+}
