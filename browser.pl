@@ -38,7 +38,33 @@ get '/:module' => sub ($c) {
     $parser->perldoc_url_prefix('/');
     $parser->output_string(\my $output);
     $parser->parse_file($path);
-    $c->render(text => $output);
+    $c->render(template => 'perldoc', content => $output);
 };
 
 app->start;
+
+__DATA__
+
+@@ perldoc.html.ep
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Ubuntu, sans-serif;
+                width: 960px;
+                margin: 1rem auto;
+            }
+
+            h1 {
+                margin-left: -2rem;
+            }
+
+            h2,h3 {
+                margin-left:  -1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <%== $content %>
+    </body>
+</html>
