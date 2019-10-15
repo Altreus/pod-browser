@@ -7,7 +7,7 @@ use experimental 'signatures';
 use Pod::Simple::Search;
 use MetaCPAN::Pod::XHTML;
 
-plugin Config => {file => 'doc-browser.conf', default => {}};
+plugin Config => {file => 'pod-browser.conf', default => {}};
 
 helper lib_dirs => sub ($c) {
     my @dirs;

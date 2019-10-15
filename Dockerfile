@@ -4,7 +4,7 @@ VOLUME /opt/libs
 WORKDIR /opt
 COPY browser.pl .
 COPY cpanfile .
-COPY doc-browser.conf.docker ./doc-browser.conf
+COPY pod-browser.conf.docker ./pod-browser.conf
 
 RUN cpanm --installdeps .
 
