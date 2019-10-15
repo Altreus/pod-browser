@@ -22,8 +22,6 @@ helper lib_dirs => sub ($c) {
         }
     }
 
-    $c->log->debug("[ $_ ]") for @dirs;
-
     return @dirs;
 };
 
