@@ -64,6 +64,10 @@ __DATA__
             h2,h3 {
                 margin-left:  -1rem;
             }
+
+            pre, code {
+                font-family: Hack, monospace;
+            }
         </style>
     </head>
     <body>
