@@ -75,6 +75,7 @@ __DATA__
             }
             pre {
                 padding: 1em;
+                overflow-x: scroll;
             }
 
             code {
