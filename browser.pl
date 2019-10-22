@@ -68,6 +68,10 @@ __DATA__
             pre, code {
                 font-family: Hack, monospace;
             }
+
+            p {
+                line-height: 1.5;
+            }
         </style>
     </head>
     <body>
