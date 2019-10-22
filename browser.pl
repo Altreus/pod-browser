@@ -77,9 +77,11 @@ __DATA__
                 padding: 1em;
                 overflow-x: scroll;
             }
-
             code {
                 padding: 0px 0.3em;
+            }
+            pre code {
+                padding: 0;
             }
 
             p {
