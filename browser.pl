@@ -67,7 +67,15 @@ __DATA__
             }
 
             pre, code {
+                background-color: rgb(214, 255, 223);
                 font-family: Hack, monospace;
+            }
+            pre {
+                padding: 1em;
+            }
+
+            code {
+                padding: 0px 0.3em;
             }
 
             p {
