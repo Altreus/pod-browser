@@ -37,6 +37,7 @@ get '/:module' => sub ($c) {
     my $parser = MetaCPAN::Pod::XHTML->new;
     $parser->$_('') for qw(html_header html_footer);
     $parser->anchor_items(1); # adds <a> to =items
+    $parser->index(1);
     $parser->perldoc_url_prefix('/');
     $parser->output_string(\my $output);
     $parser->parse_file($path);
